@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E58B61F42779A9260015D459 /* Island.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58B61F32779A9260015D459 /* Island.swift */; };
 		E5A8C992277850D90081B2DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8C991277850D90081B2DE /* AppDelegate.swift */; };
 		E5A8C998277850D90081B2DE /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8C997277850D90081B2DE /* GameScene.swift */; };
 		E5A8C99A277850D90081B2DE /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8C999277850D90081B2DE /* GameViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E58B61F32779A9260015D459 /* Island.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Island.swift; sourceTree = "<group>"; };
 		E5A8C98E277850D90081B2DE /* WarFly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WarFly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5A8C991277850D90081B2DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5A8C997277850D90081B2DE /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				E5A8C991277850D90081B2DE /* AppDelegate.swift */,
 				E5A8C997277850D90081B2DE /* GameScene.swift */,
 				E5A8C9A8277859720081B2DE /* Background.swift */,
+				E58B61F32779A9260015D459 /* Island.swift */,
 				E5A8C999277850D90081B2DE /* GameViewController.swift */,
 				E5A8C99B277850D90081B2DE /* Main.storyboard */,
 				E5A8C99E277850DD0081B2DE /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 				E5A8C998277850D90081B2DE /* GameScene.swift in Sources */,
 				E5A8C99A277850D90081B2DE /* GameViewController.swift in Sources */,
 				E5A8C992277850D90081B2DE /* AppDelegate.swift in Sources */,
+				E58B61F42779A9260015D459 /* Island.swift in Sources */,
 				E5A8C9A9277859720081B2DE /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
