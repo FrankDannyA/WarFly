@@ -13,6 +13,7 @@
 		E5A8C99D277850D90081B2DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5A8C99B277850D90081B2DE /* Main.storyboard */; };
 		E5A8C99F277850DD0081B2DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5A8C99E277850DD0081B2DE /* Assets.xcassets */; };
 		E5A8C9A2277850DD0081B2DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5A8C9A0277850DD0081B2DE /* LaunchScreen.storyboard */; };
+		E5A8C9A9277859720081B2DE /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8C9A8277859720081B2DE /* Background.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		E5A8C99C277850D90081B2DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E5A8C99E277850DD0081B2DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5A8C9A1277850DD0081B2DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E5A8C9A8277859720081B2DE /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				E5A8C991277850D90081B2DE /* AppDelegate.swift */,
 				E5A8C997277850D90081B2DE /* GameScene.swift */,
+				E5A8C9A8277859720081B2DE /* Background.swift */,
 				E5A8C999277850D90081B2DE /* GameViewController.swift */,
 				E5A8C99B277850D90081B2DE /* Main.storyboard */,
 				E5A8C99E277850DD0081B2DE /* Assets.xcassets */,
@@ -139,6 +142,7 @@
 				E5A8C998277850D90081B2DE /* GameScene.swift in Sources */,
 				E5A8C99A277850D90081B2DE /* GameViewController.swift in Sources */,
 				E5A8C992277850D90081B2DE /* AppDelegate.swift in Sources */,
+				E5A8C9A9277859720081B2DE /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +219,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +274,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
