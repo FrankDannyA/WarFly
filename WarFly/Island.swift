@@ -9,14 +9,27 @@ import SpriteKit
 import GameplayKit
 
 final class Island: SKSpriteNode,GameBackgroundSpritable {
-    static func populateSptite(at point: CGPoint) -> Island {
+    static func populate() -> Island {
+        let islandImageName = configurateName()
+        let island = Island(imageNamed: islandImageName)
+        island.setScale(randomScaleFactor)
+        island.zPosition = 1
+        island.position = randomPoint()
+        
+        island.run(move(from: island.position))
+        island.run(rotateForRandomAngle())
+        
+        return island
+    }
+    
+    static func populate(at point: CGPoint) -> Island {
         let islandImageName = configurateName()
         let island = Island(imageNamed: islandImageName)
         island.setScale(randomScaleFactor)
         island.zPosition = 1
         island.position = point
         
-        island.run(move(from: point))
+        island.run(move(from: island.position))
         island.run(rotateForRandomAngle())
         
         return island
@@ -47,7 +60,7 @@ final class Island: SKSpriteNode,GameBackgroundSpritable {
     fileprivate static func move(from point: CGPoint) -> SKAction {
         let movePoint = CGPoint(x: point.x, y: -200)
         let moveDistance = point.y + 200
-        let movementSpeed: CGFloat = 10.0
+        let movementSpeed: CGFloat = 100.0
         let duration = moveDistance / movementSpeed
         
         return SKAction.move(to: movePoint, duration: TimeInterval(duration))
