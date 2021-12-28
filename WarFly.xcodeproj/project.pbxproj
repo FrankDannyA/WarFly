@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E5709FA4277B073E00C04F3F /* BackgraoundSpritable + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5709FA3277B073E00C04F3F /* BackgraoundSpritable + extention.swift */; };
 		E58B61F42779A9260015D459 /* Island.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58B61F32779A9260015D459 /* Island.swift */; };
 		E58B61F62779B20F0015D459 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58B61F52779B20F0015D459 /* Cloud.swift */; };
 		E58B61F82779D27A0015D459 /* PlayerPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58B61F72779D27A0015D459 /* PlayerPlane.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E5709FA3277B073E00C04F3F /* BackgraoundSpritable + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BackgraoundSpritable + extention.swift"; sourceTree = "<group>"; };
 		E58B61F32779A9260015D459 /* Island.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Island.swift; sourceTree = "<group>"; };
 		E58B61F52779B20F0015D459 /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
 		E58B61F72779D27A0015D459 /* PlayerPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPlane.swift; sourceTree = "<group>"; };
@@ -66,12 +68,13 @@
 			isa = PBXGroup;
 			children = (
 				E5A8C991277850D90081B2DE /* AppDelegate.swift */,
-				E5A8C997277850D90081B2DE /* GameScene.swift */,
 				E58B61F72779D27A0015D459 /* PlayerPlane.swift */,
 				E5A8C9A8277859720081B2DE /* Background.swift */,
 				E58B61F32779A9260015D459 /* Island.swift */,
 				E58B61F52779B20F0015D459 /* Cloud.swift */,
+				E5A8C997277850D90081B2DE /* GameScene.swift */,
 				E5A8C999277850D90081B2DE /* GameViewController.swift */,
+				E5709FA3277B073E00C04F3F /* BackgraoundSpritable + extention.swift */,
 				E5A8C99B277850D90081B2DE /* Main.storyboard */,
 				E5A8C9A0277850DD0081B2DE /* LaunchScreen.storyboard */,
 				E5A8C99E277850DD0081B2DE /* Assets.xcassets */,
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5A8C998277850D90081B2DE /* GameScene.swift in Sources */,
+				E5709FA4277B073E00C04F3F /* BackgraoundSpritable + extention.swift in Sources */,
 				E58B61F82779D27A0015D459 /* PlayerPlane.swift in Sources */,
 				E58B61F62779B20F0015D459 /* Cloud.swift in Sources */,
 				E5A8C99A277850D90081B2DE /* GameViewController.swift in Sources */,
