@@ -16,7 +16,7 @@ class PowerUp: SKSpriteNode {
     init() {
         //let greenTexture = textureAtlas.textureNamed("missle_green_01")
         super.init(texture: textureAtlas.textureNamed("missle_green_01.png"), color: .clear, size: initialSize)
-        self.name = "powerUp"
+        self.name = "sprite"
         self.zPosition = 20
     }
     

@@ -4,6 +4,8 @@
 //
 //  Created by Даниил Франк on 26.12.2021.
 //
+//Добавить рандомную позицию для облаков чтобы и над самолетом пролетали
+//Добавить анимацю поворота для вражины
 
 import SpriteKit
 import GameplayKit
@@ -18,18 +20,16 @@ class GameScene: SKScene {
         spawnCloud()
         spawnIsland()
         player.performFly()
+        spawnPowerUp()
+        spawnEnemys(count: 5)
         
-        let powerUp = PowerUp()
-        powerUp.performRotation()
-        powerUp.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
-        self.addChild(powerUp)
-    }
+}
     
     override func didSimulatePhysics(){
         player.checkPosition()
         
-        enumerateChildNodes(withName: "backgroundSprite") { node, stop in
-            if node.position.y < -199 {
+        enumerateChildNodes(withName: "sprite") { node, stop in
+            if node.position.y < -100 {
                 node.removeFromParent()
             }
         }
@@ -51,6 +51,30 @@ class GameScene: SKScene {
         
         player = PlayerPlane.populate(at: CGPoint(x: screen.size.width / 2, y: 100))
         self.addChild(player)
+    }
+    
+    fileprivate func spawnPowerUp(){
+        let powerUp = PowerUp()
+        powerUp.performRotation()
+        powerUp.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
+        self.addChild(powerUp)
+    }
+    
+    fileprivate func spawnEnemys(count: Int){
+        let enemyTextureAtlas = SKTextureAtlas(named: "Enemy_1")
+        SKTextureAtlas.preloadTextureAtlases([enemyTextureAtlas]) {
+            Enemy.textureAtlas = enemyTextureAtlas
+            let waitActions = SKAction.wait(forDuration: 1.0)
+            let spawnEnemy = SKAction.run {
+                let enemy = Enemy()
+                enemy.position = CGPoint(x: self.size.width / 2, y: self.size.height + 110)
+                self.addChild(enemy)
+                enemy.flySpiral()
+            }
+            let spawnAction = SKAction.sequence([waitActions, spawnEnemy])
+            let repeatActions = SKAction.repeat(spawnAction, count: count)
+            self.run(repeatActions)
+        }
     }
     
     fileprivate func spawnCloud(){
