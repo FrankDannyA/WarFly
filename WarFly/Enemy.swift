@@ -29,8 +29,8 @@ class Enemy: SKSpriteNode {
         
         let screen = UIScreen.main.bounds
         
-        let timeHorizontal: Double = 3
-        let timeVertical: Double = 10
+        let timeHorizontal: Double = 2
+        let timeVertical: Double = 5
         
         let moveLeft = SKAction.moveTo(x: 50, duration: timeHorizontal)
         moveLeft.timingMode = .easeInEaseOut
@@ -38,12 +38,17 @@ class Enemy: SKSpriteNode {
         moveRight.timingMode = .easeInEaseOut
         
         let randomNumber = Int(arc4random_uniform(2))
-        let asideMovementSequense = SKAction.sequence([moveLeft, moveRight])
-        let foreverAsideMovements = SKAction.repeatForever(asideMovementSequense)
+        let asideMovementSequense = randomNumber == EnemyDirection.right.rawValue
+        ? SKAction.sequence([moveLeft, moveRight]) : SKAction.sequence([ moveRight, moveLeft])
         
+        let foreverAsideMovements = SKAction.repeatForever(asideMovementSequense)
         let forwardMovement = SKAction.moveTo(y: -105, duration: timeVertical)
         let groupedMovements = SKAction.group([foreverAsideMovements, forwardMovement])
         self.run(groupedMovements)
     }
 }
 
+enum EnemyDirection: Int {
+    case left = 0
+    case right = 1
+}

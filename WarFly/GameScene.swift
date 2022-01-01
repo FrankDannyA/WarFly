@@ -21,7 +21,7 @@ class GameScene: SKScene {
         spawnIsland()
         player.performFly()
         spawnPowerUp()
-        spawnEnemys(count: 5)
+        spawnEnemies()
         
 }
     
@@ -53,28 +53,44 @@ class GameScene: SKScene {
         self.addChild(player)
     }
     
-    fileprivate func spawnPowerUp(){
-        let powerUp = PowerUp()
-        powerUp.performRotation()
-        powerUp.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
-        self.addChild(powerUp)
-    }
-    
-    fileprivate func spawnEnemys(count: Int){
-        let enemyTextureAtlas = SKTextureAtlas(named: "Enemy_1")
-        SKTextureAtlas.preloadTextureAtlases([enemyTextureAtlas]) {
-            Enemy.textureAtlas = enemyTextureAtlas
+    fileprivate func spawnEnemy(){
+        let enemyTextureAtlas1 = SKTextureAtlas(named: "Enemy_1")
+        let enemyTextureAtlas2 = SKTextureAtlas(named: "Enemy_2")
+        SKTextureAtlas.preloadTextureAtlases([enemyTextureAtlas1, enemyTextureAtlas2]) { [unowned self] in
+            
+            let randomNumber = Int(arc4random_uniform(2))
+            let arrayOfAtlases = [enemyTextureAtlas1, enemyTextureAtlas2]
+            let textureAtlas = arrayOfAtlases[randomNumber]
+            
             let waitActions = SKAction.wait(forDuration: 1.0)
-            let spawnEnemy = SKAction.run {
-                let enemy = Enemy()
+            let spawnEnemy = SKAction.run { [unowned self] in
+                let textureNames = textureAtlas.textureNames.sorted()
+                let texture = textureAtlas.textureNamed(textureNames[12])
+                let enemy = Enemy(enemyTexture: texture)
                 enemy.position = CGPoint(x: self.size.width / 2, y: self.size.height + 110)
                 self.addChild(enemy)
                 enemy.flySpiral()
             }
             let spawnAction = SKAction.sequence([waitActions, spawnEnemy])
-            let repeatActions = SKAction.repeat(spawnAction, count: count)
+            let repeatActions = SKAction.repeat(spawnAction, count: 3)
             self.run(repeatActions)
         }
+    }
+    
+    fileprivate func spawnEnemies(){
+        let wait = SKAction.wait(forDuration: 3.0)
+        let spawnSpiralAction = SKAction.run { [unowned self] in
+            self.spawnEnemy()
+        }
+        
+        run(SKAction.repeatForever(SKAction.sequence([wait, spawnSpiralAction])))
+    }
+    
+    fileprivate func spawnPowerUp(){
+        let powerUp = PowerUp()
+        powerUp.performRotation()
+        powerUp.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
+        self.addChild(powerUp)
     }
     
     fileprivate func spawnCloud(){
