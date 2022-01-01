@@ -10,6 +10,9 @@
 		E505A3E5277F061400F25AC8 /* Enemy_1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = E505A3E4277F061400F25AC8 /* Enemy_1.atlas */; };
 		E505A3E7277F063900F25AC8 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E505A3E6277F063900F25AC8 /* Enemy.swift */; };
 		E505A3E9277F133600F25AC8 /* Enemy_2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = E505A3E8277F133600F25AC8 /* Enemy_2.atlas */; };
+		E505A3EB27805A7D00F25AC8 /* BluePowerUp.atlas in Resources */ = {isa = PBXBuildFile; fileRef = E505A3EA27805A7D00F25AC8 /* BluePowerUp.atlas */; };
+		E505A3ED27805BC200F25AC8 /* BluePowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E505A3EC27805BC200F25AC8 /* BluePowerUp.swift */; };
+		E505A3EF27805BF100F25AC8 /* GreenPowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E505A3EE27805BF100F25AC8 /* GreenPowerUp.swift */; };
 		E5709FA4277B073E00C04F3F /* BackgraoundSpritable + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5709FA3277B073E00C04F3F /* BackgraoundSpritable + extention.swift */; };
 		E5709FA6277C773100C04F3F /* PowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5709FA5277C773100C04F3F /* PowerUp.swift */; };
 		E5709FA9277C805200C04F3F /* GreenPowerUp.atlas in Resources */ = {isa = PBXBuildFile; fileRef = E5709FA8277C805200C04F3F /* GreenPowerUp.atlas */; };
@@ -30,6 +33,9 @@
 		E505A3E4277F061400F25AC8 /* Enemy_1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Enemy_1.atlas; sourceTree = "<group>"; };
 		E505A3E6277F063900F25AC8 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		E505A3E8277F133600F25AC8 /* Enemy_2.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Enemy_2.atlas; sourceTree = "<group>"; };
+		E505A3EA27805A7D00F25AC8 /* BluePowerUp.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = BluePowerUp.atlas; sourceTree = "<group>"; };
+		E505A3EC27805BC200F25AC8 /* BluePowerUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluePowerUp.swift; sourceTree = "<group>"; };
+		E505A3EE27805BF100F25AC8 /* GreenPowerUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenPowerUp.swift; sourceTree = "<group>"; };
 		E5709FA3277B073E00C04F3F /* BackgraoundSpritable + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BackgraoundSpritable + extention.swift"; sourceTree = "<group>"; };
 		E5709FA5277C773100C04F3F /* PowerUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUp.swift; sourceTree = "<group>"; };
 		E5709FA8277C805200C04F3F /* GreenPowerUp.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = GreenPowerUp.atlas; sourceTree = "<group>"; };
@@ -81,6 +87,8 @@
 				E58B61F72779D27A0015D459 /* PlayerPlane.swift */,
 				E505A3E6277F063900F25AC8 /* Enemy.swift */,
 				E5709FA5277C773100C04F3F /* PowerUp.swift */,
+				E505A3EC27805BC200F25AC8 /* BluePowerUp.swift */,
+				E505A3EE27805BF100F25AC8 /* GreenPowerUp.swift */,
 				E5A8C9A8277859720081B2DE /* Background.swift */,
 				E58B61F32779A9260015D459 /* Island.swift */,
 				E58B61F52779B20F0015D459 /* Cloud.swift */,
@@ -90,9 +98,10 @@
 				E5A8C99B277850D90081B2DE /* Main.storyboard */,
 				E5A8C9A0277850DD0081B2DE /* LaunchScreen.storyboard */,
 				E5A8C99E277850DD0081B2DE /* Assets.xcassets */,
+				E5709FA8277C805200C04F3F /* GreenPowerUp.atlas */,
+				E505A3EA27805A7D00F25AC8 /* BluePowerUp.atlas */,
 				E505A3E8277F133600F25AC8 /* Enemy_2.atlas */,
 				E505A3E4277F061400F25AC8 /* Enemy_1.atlas */,
-				E5709FA8277C805200C04F3F /* GreenPowerUp.atlas */,
 				E58B61F92779D33B0015D459 /* PlayerPlane.atlas */,
 			);
 			path = WarFly;
@@ -162,6 +171,7 @@
 				E5709FA9277C805200C04F3F /* GreenPowerUp.atlas in Resources */,
 				E58B61FA2779D33B0015D459 /* PlayerPlane.atlas in Resources */,
 				E5A8C99F277850DD0081B2DE /* Assets.xcassets in Resources */,
+				E505A3EB27805A7D00F25AC8 /* BluePowerUp.atlas in Resources */,
 				E5A8C9A2277850DD0081B2DE /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,9 +187,11 @@
 				E5709FA4277B073E00C04F3F /* BackgraoundSpritable + extention.swift in Sources */,
 				E58B61F82779D27A0015D459 /* PlayerPlane.swift in Sources */,
 				E58B61F62779B20F0015D459 /* Cloud.swift in Sources */,
+				E505A3ED27805BC200F25AC8 /* BluePowerUp.swift in Sources */,
 				E5A8C99A277850D90081B2DE /* GameViewController.swift in Sources */,
 				E5A8C992277850D90081B2DE /* AppDelegate.swift in Sources */,
 				E505A3E7277F063900F25AC8 /* Enemy.swift in Sources */,
+				E505A3EF27805BF100F25AC8 /* GreenPowerUp.swift in Sources */,
 				E58B61F42779A9260015D459 /* Island.swift in Sources */,
 				E5709FA6277C773100C04F3F /* PowerUp.swift in Sources */,
 				E5A8C9A9277859720081B2DE /* Background.swift in Sources */,
