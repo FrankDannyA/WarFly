@@ -25,16 +25,6 @@ class GameScene: SKScene {
         
 }
     
-    override func didSimulatePhysics(){
-        player.checkPosition()
-        
-        enumerateChildNodes(withName: "sprite") { node, stop in
-            if node.position.y <= -100 {
-                node.removeFromParent()
-            }
-        }
-    }
-    
     fileprivate func configurateStarsScene(){
         let screenCenterPoint = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
         let background = Background.populateBackground(at: screenCenterPoint)
@@ -51,6 +41,14 @@ class GameScene: SKScene {
         
         player = PlayerPlane.populate(at: CGPoint(x: screen.size.width / 2, y: 100))
         self.addChild(player)
+    }
+    
+    fileprivate func playerFire(){
+        let shot = YellowShot()
+        shot.position = self.player.position
+        shot.startMovement()
+        self.addChild(shot)
+        print("Shot")
     }
     
     fileprivate func spawnEnemy(){
@@ -128,5 +126,24 @@ class GameScene: SKScene {
         let spawnIslandForever = SKAction.repeatForever(spawnIslandSequence)
         
         run(spawnIslandForever)
+    }
+    
+    override func didSimulatePhysics(){
+        player.checkPosition()
+        
+        enumerateChildNodes(withName: "sprite") { node, stop in
+            if node.position.y <= -100 {
+                node.removeFromParent()
+            }
+        }
+        enumerateChildNodes(withName: "shotSprite") { node, stop in
+            if node.position.y <= self.size.height + 100 {
+                node.removeFromParent()
+            }
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        playerFire()
     }
 }
