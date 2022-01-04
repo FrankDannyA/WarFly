@@ -14,6 +14,12 @@ import GameplayKit
 class GameScene: SKScene {
     
     var player: PlayerPlane!
+    let scoreBackground = SKSpriteNode(imageNamed: "scores")
+    let scoreLabel = SKLabelNode(text: "1000")
+    let menuButton = SKSpriteNode(imageNamed: "menu")
+    let life1 = SKSpriteNode(imageNamed: "life")
+    let life2 = SKSpriteNode(imageNamed: "life")
+    let life3 = SKSpriteNode(imageNamed: "life")
     
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
@@ -25,9 +31,38 @@ class GameScene: SKScene {
         player.performFly()
         spawnPowerUp()
         spawnEnemies()
-        
+        configureUI()
         
 }
+    
+    fileprivate func configureUI(){
+        scoreBackground.position = CGPoint(x: scoreBackground.size.width + 10,
+                                           y: self.size.height - scoreBackground.size.height / 2 - 30)
+        scoreBackground.anchorPoint = CGPoint(x: 1.0, y: 0.5)
+        scoreBackground.zPosition = 99
+        addChild(scoreBackground)
+        
+        scoreLabel.horizontalAlignmentMode = .right
+        scoreLabel.verticalAlignmentMode = .center
+        scoreLabel.position = CGPoint(x: -10 , y: 3)
+        scoreLabel.zPosition = 100
+        scoreLabel.fontName = "AmericanTypewriter-Bold"
+        scoreLabel.fontSize = 30
+        scoreBackground.addChild(scoreLabel)
+        
+        menuButton.position = CGPoint(x: 20, y: 20)
+        menuButton.anchorPoint = CGPoint(x: 0.0, y: 0.0)
+        menuButton.zPosition = 100
+        addChild(menuButton)
+        
+        let lifes = [life1, life2, life3]
+        for (index, life) in lifes.enumerated() {
+            life.position = CGPoint(x: self.size.width - CGFloat(index + 1) * (life.size.width + 3), y: 30)
+            life.zPosition = 100
+            life.anchorPoint = CGPoint(x: 0.0, y: 0.0)
+            addChild(life)
+        }
+    }
     
     fileprivate func configurateStarsScene(){
         let screenCenterPoint = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
@@ -154,20 +189,15 @@ class GameScene: SKScene {
 extension GameScene: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
-        let bodyA = contact.bodyA.categoryBitMask
-        let bodyB = contact.bodyB.categoryBitMask
-        let player = BitMaskCategory.player
-        let enemy = BitMaskCategory.enemy
-        let powerUp = BitMaskCategory.powerUp
-        let shot = BitMaskCategory.shot
+        let contactCategory: BitMaskCategory = [contact.bodyA.category, contact.bodyB.category]
         
-        if bodyA == player && bodyB == enemy || bodyB == player && bodyA == enemy{
-            print("player vs enemy")
-        } else if bodyA == player && bodyB == powerUp || bodyB == player && bodyA == powerUp{
-            print("player vs powerUp")
-        } else if bodyA == shot && bodyB == enemy || bodyB == shot && bodyA == enemy {
-            print("enemy vs shots")
+        switch contactCategory {
+        case [.enemy, .player]:  print("player vs enemy")
+        case [.powerUp, .player]:  print("player vs powerUp")
+        case [.enemy, .shot]:  print("shot vs enemy")
+        default: preconditionFailure("Unable to defect collision category")
         }
+        
     }
     
     func didEnd(_ contact: SKPhysicsContact) {
