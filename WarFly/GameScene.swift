@@ -16,6 +16,9 @@ class GameScene: SKScene {
     var player: PlayerPlane!
     
     override func didMove(to view: SKView) {
+        physicsWorld.contactDelegate = self
+        physicsWorld.gravity = CGVector.zero
+        
         configurateStarsScene()
         spawnCloud()
         spawnIsland()
@@ -145,5 +148,29 @@ class GameScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         playerFire()
+    }
+}
+
+extension GameScene: SKPhysicsContactDelegate {
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        let bodyA = contact.bodyA.categoryBitMask
+        let bodyB = contact.bodyB.categoryBitMask
+        let player = BitMaskCategory.player
+        let enemy = BitMaskCategory.enemy
+        let powerUp = BitMaskCategory.powerUp
+        let shot = BitMaskCategory.shot
+        
+        if bodyA == player && bodyB == enemy || bodyB == player && bodyA == enemy{
+            print("player vs enemy")
+        } else if bodyA == player && bodyB == powerUp || bodyB == player && bodyA == powerUp{
+            print("player vs powerUp")
+        } else if bodyA == shot && bodyB == enemy || bodyB == shot && bodyA == enemy {
+            print("enemy vs shots")
+        }
+    }
+    
+    func didEnd(_ contact: SKPhysicsContact) {
+        
     }
 }
