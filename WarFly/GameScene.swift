@@ -22,7 +22,7 @@ class GameScene: SKScene {
         player.performFly()
         spawnPowerUp()
         spawnEnemies()
-        playerFire()
+        
         
 }
     
