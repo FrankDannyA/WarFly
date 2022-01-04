@@ -22,6 +22,7 @@ class GameScene: SKScene {
         player.performFly()
         spawnPowerUp()
         spawnEnemies()
+        playerFire()
         
 }
     
@@ -48,12 +49,11 @@ class GameScene: SKScene {
         shot.position = self.player.position
         shot.startMovement()
         self.addChild(shot)
-        print("Shot")
     }
     
     fileprivate func spawnEnemy(){
-        let enemyTextureAtlas1 = SKTextureAtlas(named: "Enemy_1")
-        let enemyTextureAtlas2 = SKTextureAtlas(named: "Enemy_2")
+        let enemyTextureAtlas1 = Assets.shared.enemy_1Atlas
+        let enemyTextureAtlas2 = Assets.shared.enemy_2Atlas 
         SKTextureAtlas.preloadTextureAtlases([enemyTextureAtlas1, enemyTextureAtlas2]) { [unowned self] in
             
             let randomNumber = Int(arc4random_uniform(2))
@@ -137,7 +137,7 @@ class GameScene: SKScene {
             }
         }
         enumerateChildNodes(withName: "shotSprite") { node, stop in
-            if node.position.y <= self.size.height + 100 {
+            if node.position.y >= self.size.height + 100 {
                 node.removeFromParent()
             }
         }
