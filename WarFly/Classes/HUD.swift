@@ -7,7 +7,7 @@
 
 import SpriteKit
 
-class HUD: SKScene {
+class HUD: SKNode {
     let scoreBackground = SKSpriteNode(imageNamed: "scores")
     let scoreLabel = SKLabelNode(text: "1000")
     let menuButton = SKSpriteNode(imageNamed: "menu")
@@ -33,6 +33,7 @@ class HUD: SKScene {
         menuButton.position = CGPoint(x: 20, y: 20)
         menuButton.anchorPoint = CGPoint(x: 0.0, y: 0.0)
         menuButton.zPosition = 100
+        menuButton.name = "pause"
         addChild(menuButton)
         
         let lifes = [life1, life2, life3]
