@@ -22,6 +22,7 @@
 		E55C7472278488050008DF6C /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55C7471278488040008DF6C /* HUD.swift */; };
 		E55C747A27857FBF0008DF6C /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55C747927857FBF0008DF6C /* ButtonNode.swift */; };
 		E55C747C278587D10008DF6C /* PauseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55C747B278587D10008DF6C /* PauseScene.swift */; };
+		E55C747E27858B1C0008DF6C /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55C747D27858B1C0008DF6C /* SceneManager.swift */; };
 		E5709FA4277B073E00C04F3F /* BackgraoundSpritable + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5709FA3277B073E00C04F3F /* BackgraoundSpritable + extention.swift */; };
 		E5709FA6277C773100C04F3F /* PowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5709FA5277C773100C04F3F /* PowerUp.swift */; };
 		E5709FA9277C805200C04F3F /* GreenPowerUp.atlas in Resources */ = {isa = PBXBuildFile; fileRef = E5709FA8277C805200C04F3F /* GreenPowerUp.atlas */; };
@@ -54,6 +55,7 @@
 		E55C7471278488040008DF6C /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		E55C747927857FBF0008DF6C /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 		E55C747B278587D10008DF6C /* PauseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseScene.swift; sourceTree = "<group>"; };
+		E55C747D27858B1C0008DF6C /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		E5709FA3277B073E00C04F3F /* BackgraoundSpritable + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BackgraoundSpritable + extention.swift"; sourceTree = "<group>"; };
 		E5709FA5277C773100C04F3F /* PowerUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUp.swift; sourceTree = "<group>"; };
 		E5709FA8277C805200C04F3F /* GreenPowerUp.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = GreenPowerUp.atlas; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				E55C746B27843F9B0008DF6C /* Assets.swift */,
 				E55C746F2784627C0008DF6C /* BitMaskCategory.swift */,
+				E55C747D27858B1C0008DF6C /* SceneManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				E5A8C992277850D90081B2DE /* AppDelegate.swift in Sources */,
 				E55C746C27843F9B0008DF6C /* Assets.swift in Sources */,
 				E505A3E7277F063900F25AC8 /* Enemy.swift in Sources */,
+				E55C747E27858B1C0008DF6C /* SceneManager.swift in Sources */,
 				E505A3EF27805BF100F25AC8 /* GreenPowerUp.swift in Sources */,
 				E58B61F42779A9260015D459 /* Island.swift in Sources */,
 				E5709FA6277C773100C04F3F /* PowerUp.swift in Sources */,
