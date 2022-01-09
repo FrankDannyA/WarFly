@@ -37,6 +37,8 @@
 		E5A8C99F277850DD0081B2DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5A8C99E277850DD0081B2DE /* Assets.xcassets */; };
 		E5A8C9A2277850DD0081B2DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5A8C9A0277850DD0081B2DE /* LaunchScreen.storyboard */; };
 		E5A8C9A9277859720081B2DE /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8C9A8277859720081B2DE /* Background.swift */; };
+		E5F3BCAB278A9B2800A30DE0 /* ParentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3BCAA278A9B2800A30DE0 /* ParentScene.swift */; };
+		E5F3BCAD278A9E5B00A30DE0 /* OptionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3BCAC278A9E5B00A30DE0 /* OptionsScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		E5A8C99E277850DD0081B2DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5A8C9A1277850DD0081B2DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5A8C9A8277859720081B2DE /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		E5F3BCAA278A9B2800A30DE0 /* ParentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentScene.swift; sourceTree = "<group>"; };
+		E5F3BCAC278A9E5B00A30DE0 /* OptionsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,8 @@
 				E5A8C997277850D90081B2DE /* GameScene.swift */,
 				E55C746D278447060008DF6C /* MenuScene.swift */,
 				E55C747B278587D10008DF6C /* PauseScene.swift */,
+				E5F3BCAC278A9E5B00A30DE0 /* OptionsScene.swift */,
+				E5F3BCAA278A9B2800A30DE0 /* ParentScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -286,11 +292,13 @@
 				E5709FA6277C773100C04F3F /* PowerUp.swift in Sources */,
 				E55C74702784627C0008DF6C /* BitMaskCategory.swift in Sources */,
 				E55C746E278447060008DF6C /* MenuScene.swift in Sources */,
+				E5F3BCAB278A9B2800A30DE0 /* ParentScene.swift in Sources */,
 				E55C747C278587D10008DF6C /* PauseScene.swift in Sources */,
 				E55C7472278488050008DF6C /* HUD.swift in Sources */,
 				E55C74662782FC8C0008DF6C /* Shot.swift in Sources */,
 				E5A8C9A9277859720081B2DE /* Background.swift in Sources */,
 				E55C747A27857FBF0008DF6C /* ButtonNode.swift in Sources */,
+				E5F3BCAD278A9E5B00A30DE0 /* OptionsScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
