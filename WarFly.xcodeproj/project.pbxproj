@@ -39,6 +39,7 @@
 		E5A8C9A9277859720081B2DE /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A8C9A8277859720081B2DE /* Background.swift */; };
 		E5F3BCAB278A9B2800A30DE0 /* ParentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3BCAA278A9B2800A30DE0 /* ParentScene.swift */; };
 		E5F3BCAD278A9E5B00A30DE0 /* OptionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3BCAC278A9E5B00A30DE0 /* OptionsScene.swift */; };
+		E5F3BCAF278AAC0700A30DE0 /* BestScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3BCAE278AAC0700A30DE0 /* BestScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		E5A8C9A8277859720081B2DE /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		E5F3BCAA278A9B2800A30DE0 /* ParentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentScene.swift; sourceTree = "<group>"; };
 		E5F3BCAC278A9E5B00A30DE0 /* OptionsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScene.swift; sourceTree = "<group>"; };
+		E5F3BCAE278AAC0700A30DE0 /* BestScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				E55C746D278447060008DF6C /* MenuScene.swift */,
 				E55C747B278587D10008DF6C /* PauseScene.swift */,
 				E5F3BCAC278A9E5B00A30DE0 /* OptionsScene.swift */,
+				E5F3BCAE278AAC0700A30DE0 /* BestScene.swift */,
 				E5F3BCAA278A9B2800A30DE0 /* ParentScene.swift */,
 			);
 			path = Scenes;
@@ -290,6 +293,7 @@
 				E505A3EF27805BF100F25AC8 /* GreenPowerUp.swift in Sources */,
 				E58B61F42779A9260015D459 /* Island.swift in Sources */,
 				E5709FA6277C773100C04F3F /* PowerUp.swift in Sources */,
+				E5F3BCAF278AAC0700A30DE0 /* BestScene.swift in Sources */,
 				E55C74702784627C0008DF6C /* BitMaskCategory.swift in Sources */,
 				E55C746E278447060008DF6C /* MenuScene.swift in Sources */,
 				E5F3BCAB278A9B2800A30DE0 /* ParentScene.swift in Sources */,
