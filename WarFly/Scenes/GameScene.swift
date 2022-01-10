@@ -246,6 +246,10 @@ extension GameScene: SKPhysicsContactDelegate {
             self.run(waitForExplotionAction) { explosion?.removeFromParent() }
             
             if lives == 0 {
+                
+                gameSettings.currentScore = hud.score
+                gameSettings.saveScores()
+                
                 let gameOverScene = GameOverScene(size: self.size)
                 let transition = SKTransition.doorsCloseVertical(withDuration: 1.0)
                 gameOverScene.scaleMode = .aspectFill
@@ -290,7 +294,7 @@ extension GameScene: SKPhysicsContactDelegate {
                 contact.bodyB.node?.removeFromParent()
                 hud.score += 5
                 if gameSettings.isSound{
-                self.run(SKAction.playSoundFileNamed("hitSound", waitForCompletion: false))
+                    self.run(SKAction.playSoundFileNamed("hitSound", waitForCompletion: false))
                 }
                 addChild(explosion!)
                 self.run(waitForExplotionAction) { explosion?.removeFromParent() }

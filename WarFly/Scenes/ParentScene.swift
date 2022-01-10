@@ -12,7 +12,7 @@ class ParentScene: SKScene {
     let gameSettings = GameSettings()
     let sceneManager = SceneManager.shared
     var backScene: SKScene?
-
+    
     func setHeader(withName name: String?, andBackground backgroundName: String) {
         
         let header = ButtonNode(title: name, backgroundName: backgroundName)

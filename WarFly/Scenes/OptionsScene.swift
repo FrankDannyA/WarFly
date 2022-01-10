@@ -50,7 +50,7 @@ class OptionsScene: ParentScene {
         } else if node.name == "sound" {
             isSound = !isSound
             update(node: node as! SKSpriteNode, property: isSound)
-
+            
         } else if node.name == "back" {
             
             gameSettings.isSound = isSound
