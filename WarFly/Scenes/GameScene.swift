@@ -16,6 +16,26 @@ class GameScene: ParentScene {
     fileprivate let screenSize = UIScreen.main.bounds.size
     fileprivate var player: PlayerPlane!
     fileprivate let hud = HUD()
+    fileprivate var lives = 3 {
+        didSet {
+            switch lives {
+            case 3:
+                hud.life1.isHidden = false
+                hud.life2.isHidden = false
+                hud.life3.isHidden = false
+            case 2:
+                hud.life1.isHidden = false
+                hud.life2.isHidden = false
+                hud.life3.isHidden = true
+            case 1:
+                hud.life1.isHidden = false
+                hud.life2.isHidden = true
+                hud.life3.isHidden = true
+            default:
+                break
+            }
+        }
+    }
     
     override func didMove(to view: SKView) {
         
@@ -34,7 +54,7 @@ class GameScene: ParentScene {
         spawnEnemies()
         createHUD()
         
-}
+    }
     
     fileprivate func createHUD() {
         addChild(hud)
@@ -42,22 +62,22 @@ class GameScene: ParentScene {
     }
     
     fileprivate func configurateStarsScene(){
-    let screenCenterPoint = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
-    let background = Background.populateBackground(at: screenCenterPoint)
-    background.size = self.size
-    self.addChild(background)
-    
-    let screen = UIScreen.main.bounds
+        let screenCenterPoint = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
+        let background = Background.populateBackground(at: screenCenterPoint)
+        background.size = self.size
+        self.addChild(background)
         
-    let island1 = Island.populate(at: CGPoint(x: 100, y: 200))
-    self.addChild(island1)
-    
-    let island2 = Island.populate(at: CGPoint(x: self.size.width - 100, y: self.size.width - 200))
-    self.addChild(island2)
-    
-    player = PlayerPlane.populate(at: CGPoint(x: screen.size.width / 2, y: 100))
-    self.addChild(player)
-}
+        let screen = UIScreen.main.bounds
+        
+        let island1 = Island.populate(at: CGPoint(x: 100, y: 200))
+        self.addChild(island1)
+        
+        let island2 = Island.populate(at: CGPoint(x: self.size.width - 100, y: self.size.width - 200))
+        self.addChild(island2)
+        
+        player = PlayerPlane.populate(at: CGPoint(x: screen.size.width / 2, y: 100))
+        self.addChild(player)
+    }
     
     fileprivate func playerFire(){
         let shot = YellowShot()
@@ -68,7 +88,7 @@ class GameScene: ParentScene {
     
     fileprivate func spawnEnemy(){
         let enemyTextureAtlas1 = Assets.shared.enemy_1Atlas
-        let enemyTextureAtlas2 = Assets.shared.enemy_2Atlas 
+        let enemyTextureAtlas2 = Assets.shared.enemy_2Atlas
         SKTextureAtlas.preloadTextureAtlases([enemyTextureAtlas1, enemyTextureAtlas2]) { [unowned self] in
             
             let randomNumber = Int(arc4random_uniform(2))
@@ -156,6 +176,16 @@ class GameScene: ParentScene {
                 node.removeFromParent()
             }
         }
+        enumerateChildNodes(withName: "bluePowerUp") { node, stop in
+            if node.position.y >= self.size.height + 100 {
+                node.removeFromParent()
+            }
+        }
+        enumerateChildNodes(withName: "greenPowerUp") { node, stop in
+            if node.position.y >= self.size.height + 100 {
+                node.removeFromParent()
+            }
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -181,25 +211,44 @@ extension GameScene: SKPhysicsContactDelegate {
         let explosion = SKEmitterNode(fileNamed: "EnemyExplosion")
         let contactPoint = contact.contactPoint
         explosion?.position = contactPoint
+        explosion?.zPosition = 25
         let waitForExplotionAction = SKAction.wait(forDuration: 1.0)
         
         let contactCategory: BitMaskCategory = [contact.bodyA.category, contact.bodyB.category]
         
         switch contactCategory {
         case [.enemy, .player]:  print("player vs enemy")
+            
             if contact.bodyA.node?.name == "sprite" {
-                contact.bodyA.node?.removeFromParent()
+                if contact.bodyA.node?.parent != nil {
+                    contact.bodyA.node?.removeFromParent()
+                    lives -= 1
+                }
             } else {
-                contact.bodyB.node?.removeFromParent()
+                if contact.bodyB.node?.parent != nil {
+                    contact.bodyB.node?.removeFromParent()
+                    lives -= 1
+                }
             }
             addChild(explosion!)
             self.run(waitForExplotionAction) { explosion?.removeFromParent() }
+            
+            if lives == 0 {
+                let gameOverScene = GameOverScene(size: self.size)
+                let transition = SKTransition.doorsCloseVertical(withDuration: 1.0)
+                gameOverScene.scaleMode = .aspectFill
+                self.scene!.view?.presentScene(gameOverScene, transition: transition)
+            }
+            
         case [.powerUp, .player]:  print("player vs powerUp")
         case [.enemy, .shot]:  print("shot vs enemy")
+            hud.score += 5
+            
             contact.bodyA.node?.removeFromParent()
             contact.bodyB.node?.removeFromParent()
             addChild(explosion!)
             self.run(waitForExplotionAction) { explosion?.removeFromParent() }
+            
         default: preconditionFailure("Unable to defect collision category")
         }
         
