@@ -13,6 +13,8 @@ import GameplayKit
 
 class GameScene: ParentScene {
     
+    var backgroundMusic: SKAudioNode!
+    
     fileprivate let screenSize = UIScreen.main.bounds.size
     fileprivate var player: PlayerPlane!
     fileprivate let hud = HUD()
@@ -38,6 +40,11 @@ class GameScene: ParentScene {
     }
     
     override func didMove(to view: SKView) {
+        
+        if let musicURL = Bundle.main.url(forResource: "backgroundMusic", withExtension: "m4a") {
+            backgroundMusic = SKAudioNode(url: musicURL)
+            addChild(backgroundMusic)
+        }
         
         guard sceneManager.gameScene == nil else { return }
         
@@ -217,6 +224,7 @@ extension GameScene: SKPhysicsContactDelegate {
         let contactCategory: BitMaskCategory = [contact.bodyA.category, contact.bodyB.category]
         
         switch contactCategory {
+            
         case [.enemy, .player]:  print("player vs enemy")
             
             if contact.bodyA.node?.name == "sprite" {
@@ -273,13 +281,15 @@ extension GameScene: SKPhysicsContactDelegate {
             
         case [.enemy, .shot]:  print("shot vs enemy")
             
-            if contact.bodyA.node?.parent != nil{
+            if contact.bodyA.node?.parent != nil && contact.bodyB.node?.parent != nil{
                 contact.bodyA.node?.removeFromParent()
                 contact.bodyB.node?.removeFromParent()
                 hud.score += 5
+                self.run(SKAction.playSoundFileNamed("hitSound", waitForCompletion: false))
                 addChild(explosion!)
                 self.run(waitForExplotionAction) { explosion?.removeFromParent() }
             }
+            
         default: preconditionFailure("Unable to defect collision category")
         }
         
