@@ -45,6 +45,7 @@
 		E5F3BCB6278C325E00A30DE0 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3BCB5278C325E00A30DE0 /* GameOverScene.swift */; };
 		E5F3BCB9278C44BE00A30DE0 /* backgroundMusic.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E5F3BCB7278C44BE00A30DE0 /* backgroundMusic.m4a */; };
 		E5F3BCBA278C44BE00A30DE0 /* hitSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5F3BCB8278C44BE00A30DE0 /* hitSound.wav */; };
+		E5F3BCBC278C488C00A30DE0 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3BCBB278C488C00A30DE0 /* GameSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		E5F3BCB5278C325E00A30DE0 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		E5F3BCB7278C44BE00A30DE0 /* backgroundMusic.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = backgroundMusic.m4a; sourceTree = "<group>"; };
 		E5F3BCB8278C44BE00A30DE0 /* hitSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitSound.wav; sourceTree = "<group>"; };
+		E5F3BCBB278C488C00A30DE0 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				E55C746B27843F9B0008DF6C /* Assets.swift */,
 				E55C746F2784627C0008DF6C /* BitMaskCategory.swift */,
 				E55C747D27858B1C0008DF6C /* SceneManager.swift */,
+				E5F3BCBB278C488C00A30DE0 /* GameSettings.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			files = (
 				E5A8C998277850D90081B2DE /* GameScene.swift in Sources */,
 				E55C74682782FE960008DF6C /* YellowShot.swift in Sources */,
+				E5F3BCBC278C488C00A30DE0 /* GameSettings.swift in Sources */,
 				E5709FA4277B073E00C04F3F /* BackgraoundSpritable + extention.swift in Sources */,
 				E58B61F82779D27A0015D459 /* PlayerPlane.swift in Sources */,
 				E58B61F62779B20F0015D459 /* Cloud.swift in Sources */,
