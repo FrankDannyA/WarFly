@@ -177,12 +177,12 @@ class GameScene: ParentScene {
             }
         }
         enumerateChildNodes(withName: "bluePowerUp") { node, stop in
-            if node.position.y >= self.size.height + 100 {
+            if node.position.y <= -100 {
                 node.removeFromParent()
             }
         }
         enumerateChildNodes(withName: "greenPowerUp") { node, stop in
-            if node.position.y >= self.size.height + 100 {
+            if node.position.y <= -100 {
                 node.removeFromParent()
             }
         }
@@ -241,20 +241,51 @@ extension GameScene: SKPhysicsContactDelegate {
             }
             
         case [.powerUp, .player]:  print("player vs powerUp")
+            
+            if contact.bodyA.node?.parent != nil && contact.bodyB.node?.parent != nil {
+                if contact.bodyA.node?.name == "greenPowerUp" {
+                    contact.bodyA.node?.removeFromParent()
+                    lives = 3
+                    player.greenPowerUp()
+                } else {
+                    if contact.bodyB.node?.name == "greenPowerUp" {
+                        contact.bodyB.node?.removeFromParent()
+                        lives = 3
+                        player.greenPowerUp()
+                    }
+                }
+                
+                if contact.bodyA.node?.parent != nil && contact.bodyB.node?.parent != nil {
+                    if contact.bodyA.node?.name == "bluePowerUp"{
+                        contact.bodyB.node?.removeFromParent()
+                        player.bluePowerUp()
+                        print("BLUE")
+                    } else {
+                        if contact.bodyB.node?.name == "greenPowerUp" {
+                            contact.bodyB.node?.removeFromParent()
+                            player.bluePowerUp()
+                            print("BLUE")
+                        }
+                    }
+                }
+            }
+            
+            
         case [.enemy, .shot]:  print("shot vs enemy")
-            hud.score += 5
             
-            contact.bodyA.node?.removeFromParent()
-            contact.bodyB.node?.removeFromParent()
-            addChild(explosion!)
-            self.run(waitForExplotionAction) { explosion?.removeFromParent() }
-            
+            if contact.bodyA.node?.parent != nil{
+                contact.bodyA.node?.removeFromParent()
+                contact.bodyB.node?.removeFromParent()
+                hud.score += 5
+                addChild(explosion!)
+                self.run(waitForExplotionAction) { explosion?.removeFromParent() }
+            }
         default: preconditionFailure("Unable to defect collision category")
         }
         
-    }
-    
-    func didEnd(_ contact: SKPhysicsContact) {
         
+        func didEnd(_ contact: SKPhysicsContact) {
+            
+        }
     }
 }

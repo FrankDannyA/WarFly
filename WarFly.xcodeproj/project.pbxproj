@@ -43,6 +43,8 @@
 		E5F3BCB2278C294700A30DE0 /* EnemyExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = E5F3BCB0278C294700A30DE0 /* EnemyExplosion.sks */; };
 		E5F3BCB3278C294700A30DE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5F3BCB1278C294700A30DE0 /* Assets.xcassets */; };
 		E5F3BCB6278C325E00A30DE0 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3BCB5278C325E00A30DE0 /* GameOverScene.swift */; };
+		E5F3BCB9278C44BE00A30DE0 /* backgroundMusic.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E5F3BCB7278C44BE00A30DE0 /* backgroundMusic.m4a */; };
+		E5F3BCBA278C44BE00A30DE0 /* hitSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5F3BCB8278C44BE00A30DE0 /* hitSound.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,8 @@
 		E5F3BCB0278C294700A30DE0 /* EnemyExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EnemyExplosion.sks; sourceTree = "<group>"; };
 		E5F3BCB1278C294700A30DE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5F3BCB5278C325E00A30DE0 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		E5F3BCB7278C44BE00A30DE0 /* backgroundMusic.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = backgroundMusic.m4a; sourceTree = "<group>"; };
+		E5F3BCB8278C44BE00A30DE0 /* hitSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitSound.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 		E55C747327848AF80008DF6C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E5F3BCB7278C44BE00A30DE0 /* backgroundMusic.m4a */,
+				E5F3BCB8278C44BE00A30DE0 /* hitSound.wav */,
 				E5A8C991277850D90081B2DE /* AppDelegate.swift */,
 				E5A8C99B277850D90081B2DE /* Main.storyboard */,
 				E5A8C9A0277850DD0081B2DE /* LaunchScreen.storyboard */,
@@ -284,7 +290,9 @@
 				E55C746A278302F30008DF6C /* YellowAmmo.atlas in Resources */,
 				E5709FA9277C805200C04F3F /* GreenPowerUp.atlas in Resources */,
 				E58B61FA2779D33B0015D459 /* PlayerPlane.atlas in Resources */,
+				E5F3BCBA278C44BE00A30DE0 /* hitSound.wav in Resources */,
 				E5F3BCB2278C294700A30DE0 /* EnemyExplosion.sks in Resources */,
+				E5F3BCB9278C44BE00A30DE0 /* backgroundMusic.m4a in Resources */,
 				E5A8C99F277850DD0081B2DE /* Assets.xcassets in Resources */,
 				E505A3EB27805A7D00F25AC8 /* BluePowerUp.atlas in Resources */,
 				E5A8C9A2277850DD0081B2DE /* LaunchScreen.storyboard in Resources */,
